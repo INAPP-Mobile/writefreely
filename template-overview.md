@@ -1,4 +1,4 @@
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/writefreely?utm_campaign=writefreely)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/writefreely-1?utm_campaign=writefreely)
 
 ![WriteFreely Reader](https://raw.githubusercontent.com/INAPP-Mobile/writefreely/main/assets/writefreely-reader.png)
 

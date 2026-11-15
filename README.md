@@ -2,7 +2,7 @@
 
 WriteFreely is a clean, Markdown-based publishing platform made for writers: start a blog, share knowledge, or build a community — with federation, so people on the fediverse can follow your blog. This repo is a one-click Railway wrapper around the official image (writefreely/writefreely v0.17.3, AGPL-3.0), with the admin account auto-seeded and data persisted on a volume.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/writefreely?utm_campaign=writefreely)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/writefreely-1?utm_campaign=writefreely)
 
 ![WriteFreely Reader](assets/writefreely-reader.png)
 
