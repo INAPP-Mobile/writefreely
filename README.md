@@ -14,7 +14,7 @@ Screenshot: upstream WriteFreely Reader view (writefreely.org).
 
 ## Deploy and Host
 
-Click **Deploy on Railway** above. The deploy form has one generated field — an admin password — and nothing else to fill in. On first boot the entrypoint creates the admin account (`admin` + your generated password) via WriteFreely's CLI; log in and write your first post.
+Click **Deploy on Railway** above. The deploy form has one generated field — an admin password — and nothing else to fill in. On first boot the entrypoint creates the admin account (`owner` + your generated password) via WriteFreely's CLI; log in and write your first post.
 
 ## Why Deploy
 
@@ -34,7 +34,7 @@ Click **Deploy on Railway** above. The deploy form has one generated field — a
 
 | Variable | Default | What it does |
 |---|---|---|
-| `WRITEFREELY_ADMIN_PASSWORD` | `${{secret(16)}}` (generated) | Password for the auto-seeded admin account (`admin`). Set once on first boot; changing it later does not reset the admin password. Must not contain a colon. |
+| `WRITEFREELY_ADMIN_PASSWORD` | `${{secret(16)}}` (generated) | Password for the auto-seeded admin account (`owner`). Set once on first boot; changing it later does not reset the admin password. Must not contain a colon. |
 | `PORT` | Railway-injected | Mapped into the generated `config.ini` (`[server] port`) by the entrypoint on every boot. Do not set it yourself. |
 
 All other WriteFreely settings live in the generated `config.ini` (`/data/config.ini` on the volume) and are set to sane single-user defaults at boot: `single_user = true`, `open_registration = false`, `federation = true`, `theme = write`, public host derived from `RAILWAY_PUBLIC_DOMAIN`. See the [upstream configuration docs](https://writefreely.org/docs/latest/admin/config) for the full list.

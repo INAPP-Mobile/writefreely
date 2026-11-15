@@ -6,7 +6,7 @@ Screenshot: upstream WriteFreely Reader view (writefreely.org).
 
 # Deploy and Host
 
-WriteFreely is a clean, Markdown-based publishing platform made for writers: start a blog, share knowledge, or build a community — with federation, so people on the fediverse can follow your blog. One click deploys the official image (writefreely/writefreely v0.17.3, AGPL-3.0) as a single service with an embedded SQLite database. The deploy form has one generated field — an admin password — and nothing else to fill in. On first boot the admin account (`admin` + your generated password) is created automatically; log in and write your first post.
+WriteFreely is a clean, Markdown-based publishing platform made for writers: start a blog, share knowledge, or build a community — with federation, so people on the fediverse can follow your blog. One click deploys the official image (writefreely/writefreely v0.17.3, AGPL-3.0) as a single service with an embedded SQLite database. The deploy form has one generated field — an admin password — and nothing else to fill in. On first boot the admin account (`owner` + your generated password) is created automatically; log in and write your first post.
 
 ## About Hosting
 

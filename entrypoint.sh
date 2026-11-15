@@ -68,10 +68,13 @@ if [ ! -f "$DB" ]; then
     "$WF_BIN" -c "$CONFIG" --init-db
 fi
 
-# Seed the admin account once per volume. The generated password comes from
-# the template variable; changing it later does NOT reset the admin password
-# (use the in-app account settings instead). The password must not contain
-# a colon — --create-admin parses "username:password" on the first colon.
+# Seed the admin account once per volume. The username is `owner`, NOT
+# `admin`: upstream reserves "admin" (author/author.go reservedUsernames)
+# and --create-admin fails with "Username admin is invalid, reserved...".
+# The generated password comes from the template variable; changing it
+# later does NOT reset the admin password (use the in-app account
+# settings instead). The password must not contain a colon —
+# --create-admin parses "username:password" on the first colon.
 if [ ! -f /data/.admin-created ]; then
     if [ -z "${WRITEFREELY_ADMIN_PASSWORD:-}" ]; then
         echo "entrypoint: admin not seeded and WRITEFREELY_ADMIN_PASSWORD is not set — failing loud"
@@ -84,7 +87,7 @@ if [ ! -f /data/.admin-created ]; then
             ;;
     esac
     echo "entrypoint: creating admin account"
-    "$WF_BIN" -c "$CONFIG" --create-admin "admin:${WRITEFREELY_ADMIN_PASSWORD}"
+    "$WF_BIN" -c "$CONFIG" --create-admin "owner:${WRITEFREELY_ADMIN_PASSWORD}"
     touch /data/.admin-created
 else
     echo "entrypoint: admin account already seeded, skipping"
