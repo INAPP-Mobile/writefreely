@@ -93,5 +93,13 @@ else
     echo "entrypoint: admin account already seeded, skipping"
 fi
 
+# Generate the encryption keys (email, session, CSRF) under /data/keys.
+# Serve-time InitKeys does NOT create them — it fails loud with "Missing
+# encryption keys ... run: writefreely keys generate". --gen-keys is
+# idempotent (generateKey skips files that already exist), so it is safe
+# to run on every boot; keys are created once per volume and survive
+# redeploys on the volume.
+"$WF_BIN" -c "$CONFIG" --gen-keys
+
 # Serve in the foreground.
 exec "$WF_BIN" -c "$CONFIG"
