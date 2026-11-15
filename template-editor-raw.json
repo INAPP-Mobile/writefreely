@@ -1,0 +1,1 @@
+{"WRITEFREELY_ADMIN_PASSWORD":{"description":"Password for the auto-seeded admin account (username: admin). Set once on first boot; changing it later does not reset the admin password.","value":"${{secret(16)}}"}}
